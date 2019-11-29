@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require('cors');
-const app = express();
 const dotenv = require('dotenv');
-const port = process.env.PORT || 4000;
 const fs = require('fs');
 
 dotenv.config();
-
+const port = process.env.PORT || 4000;
+const app = express();
 const router = express.Router();
+
 router.use(cors());
 router.get("/", (req, res) => {
   const rawdata = fs.readFileSync('memory.json');
